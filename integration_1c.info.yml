@@ -1,0 +1,7 @@
+name: 'Integration 1C'
+type: module
+description: 'Integration with 1C accounting'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - rest

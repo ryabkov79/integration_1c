@@ -1,0 +1,12 @@
+services:
+  logger.channel.integration_1c:
+    parent: logger.channel_base
+    arguments: ['integration_1c']
+  integration_1c.directory:
+    class: Drupal\integration_1c\Directory
+  integration_1c.payments_bills:
+    class: Drupal\integration_1c\PaymentsBills
+    arguments: ['@entity_type.manager', '@logger.channel.integration_1c', '@integration_1c.directory']
+  integration_1c.house_service_payments:
+    class: Drupal\integration_1c\HouseServicePayments
+    arguments: ['@reports.payments_bills', '@logger.channel.integration_1c']
